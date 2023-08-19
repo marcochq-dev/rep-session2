@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/net6.0/TSPSimulatedAnnealing.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "DOTNET_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            },
+            "pipeTransport": {
+                "pipeCwd": "${workspaceFolder}",
+                "pipeProgram": "dotnet",
+                "pipeArgs": ["exec", "--runtimeconfig", "${workspaceFolder}/bin/Debug/net6.0/TSPSimulatedAnnealing.runtimeconfig.json"],
+                "debuggerPath": "/usr/bin/lldb"
+            },
+            "logging": {
+                "moduleLoad": false,
+                "exceptions": {
+                    "filter": ".*",
+                    "callstackRegex": "^(System|Microsoft).*",
+                    "logUncaught": true
+                }
+            },
+            "serverLaunchTimeout": 50000
+        }
+    ]
+}
